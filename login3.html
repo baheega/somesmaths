@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login 3 Page</title>
+  <style>
+    /* Basic styling */
+    body {
+      background-image: url('https://wallpaperaccess.com/full/5793189.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed
+
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex; /* Use flexbox for centering */
+      justify-content: center; /* Center horizontally */
+      align-items: center; /* Center vertically */
+      min-height: 100vh; /* Set minimum height for viewport coverage */
+    }
+
+    /* Centered top icon */
+    .icon {
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    form {
+      background-color: #f0f0f0;
+      padding: 30px;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <img class="icon" src="images/logo.png">
+
+  <form id="login-form">
+    <label for="key">Key:</label>
+    <input type="password" id="key" name="key" required><br>
+    <button type="submit">Login</button>
+  </form>
+  <p id="message"></p>
+
+  <script>
+    const form = document.getElementById('login-form');
+    const message = document.getElementById('message');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault(); // Prevent default form submission
+
+      const key = document.getElementById('key').value;
+
+      // Simulate key validation (replace with server-side validation)
+      if (key === 'Nanay') {
+        message.textContent = 'Successful!';
+        // Redirect to protected area (replace with actual redirection)
+        window.location.href = 'something.html';
+      } else {
+        message.textContent = 'Invalid key.';
+      }
+    });
+  </script>
+</body>
+</html>
